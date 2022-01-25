@@ -3,7 +3,7 @@ const dynamicCacheName = "site-dynamic-v1";
 
 const self = this;
 
-const assets = ["/", "/index.html", "../components/assets"];
+const assets = ["/offline.html", "/index.html", "../src/assets"];
 
 // install event
 self.addEventListener("install", (evt) => {
