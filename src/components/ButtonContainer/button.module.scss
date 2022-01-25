@@ -1,0 +1,31 @@
+.button_container {
+  width: 100px;
+  padding: 0 15px;
+  background-color: white;
+  color: black;
+  font-size: 10px;
+  margin: 30px 10px 0px 35px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bolder;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  animation: translateButton 0.55s ease-out 0.7s 1 forwards;
+  transform: translateY(1000px);
+
+  h4 {
+    margin: 12px 5px;
+  }
+}
+
+@keyframes translateButton {
+  50% {
+    transform: translateY(500px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

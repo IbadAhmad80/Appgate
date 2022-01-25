@@ -1,0 +1,85 @@
+@import "../../index.scss";
+
+.hero_section_wrapper {
+  position: absolute;
+  display: flex;
+  column-gap: 0rem;
+  left: 0;
+  top: 0;
+  bottom: 10;
+  right: 10;
+  min-width: 450px;
+  max-width: 450px;
+  margin: 100px 0 0 70px;
+
+  .border_image {
+    height: 150px;
+    width: 50px;
+    animation: translateText 0.55s ease-out 0s 1 forwards;
+    transform: translateY(1000px);
+  }
+  .textContainer {
+    color: white;
+    margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    margin: 80px 0 0 30px;
+  }
+}
+
+.textContainer p,
+.textContainer h3 {
+  transform: translateY(1000px);
+}
+
+.mainText {
+  margin: 30px 0 20px 0 !important;
+  font-size: 50px;
+  font-weight: bolder;
+  animation: translateText 0.55s ease-out 0.1s 1 forwards;
+}
+
+.thanksNote {
+  font-size: 13px;
+  animation: translateText 0.55s ease-out 0.2s 1 forwards;
+}
+
+.upperHr,
+.lowerHr {
+  width: 35px;
+  height: 1px;
+  background-color: $primary-color;
+}
+
+.upperHr {
+  animation: translateText 0.55s ease-out 0.3s 1 forwards;
+}
+
+.lowerHr {
+  animation: translateText 0.55s ease-out 0.5s 1 forwards;
+}
+
+.lowerSecondaryText,
+.upperSecondaryText {
+  font-weight: bolder;
+  margin: 5px 0;
+  font-size: 13px;
+}
+
+.upperSecondaryText {
+  animation: translateText 0.55s ease-out 0.4s 1 forwards;
+}
+
+.lowerSecondaryText {
+  animation: translateText 0.55s ease-out 0.6s 1 forwards;
+}
+
+@keyframes translateText {
+  50% {
+    transform: translateY(500px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
