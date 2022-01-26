@@ -1,6 +1,7 @@
 import React from "react";
 import landing_gif from "../../assets/landing_gif.mp4";
 import HeroSection from "../../components/HeroSection";
+import SideDrawer from "../../components/Sidebar/index";
 
 const LandingScreen = () => {
   return (
@@ -8,6 +9,7 @@ const LandingScreen = () => {
       <video muted autoPlay loop style={backgroundGif}>
         <source src={landing_gif} type="video/mp4" />
       </video>
+      <SideDrawer />
       <HeroSection />
     </div>
   );

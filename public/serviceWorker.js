@@ -3,7 +3,7 @@ const dynamicCacheName = "site-dynamic-v1";
 
 const self = this;
 
-const assets = ["/offline.html", "/index.html", "../src/assets"];
+const assets = ["/offline.html", "/index.html", "/"];
 
 // install event
 self.addEventListener("install", (evt) => {
@@ -34,24 +34,22 @@ self.addEventListener("activate", (evt) => {
 // fetch event
 self.addEventListener("fetch", (evt) => {
   evt.respondWith(
-    caches
-      .match(evt.request)
-      .then((cacheRes) => {
-        return (
-          cacheRes ||
-          fetch(evt.request).then((fetchRes) => {
-            return caches.open(dynamicCacheName).then((cache) => {
-              cache.put(evt.request.url, fetchRes.clone());
-
-              return fetchRes;
-            });
-          })
-        );
+    fetch(evt.request)
+      .then((fetchRes) => {
+        return caches.open(dynamicCacheName).then((cache) => {
+          cache.put(evt.request.url, fetchRes.clone());
+          return fetchRes;
+        });
       })
       .catch(() => {
-        if (evt.request.url.indexOf(".html") > -1) {
-          return caches.match("/offline.html");
-        }
+        caches.match(evt.request).then((cacheRes) => {
+          return cacheRes;
+        });
       })
+    // .catch(() => {
+    //   if (evt.request.url.indexOf(".html") > -1) {
+    //     return caches.match("/offline.html");
+    //   }
+    // })
   );
 });
