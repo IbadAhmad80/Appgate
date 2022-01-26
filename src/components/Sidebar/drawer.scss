@@ -12,6 +12,7 @@
   background-color: #000;
   transform: translateX(-110px);
   transition: transform 0.5s;
+  // animation: slide-right 0.5s forwards;
 
   .sidebar_items_wrapper {
     display: flex;
@@ -31,6 +32,15 @@
   }
 }
 
+@keyframes slide-right {
+  0% {
+    transform: translateX(-140px);
+  }
+  100% {
+    transform: translateX(-110px);
+  }
+}
+
 .sidebar_items_expand {
   transform: translateX(0px);
 }
@@ -45,6 +55,7 @@
   text-align: center;
   line-height: 1rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .sidebar_item .green_text {

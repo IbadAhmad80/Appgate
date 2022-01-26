@@ -1,0 +1,28 @@
+.sdp-video-container {
+  position: relative;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  object-position: center;
+}
+
+.play-img-container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.play-img {
+  height: 80px;
+  width: 80px;
+  cursor: pointer;
+}

@@ -15,8 +15,10 @@ import playGreen from "../../assets/icons/media/play-green.png";
 import eventGreen from "../../assets/icons/media/event-green.png";
 
 import classNames from "classnames";
+import { useNavigate } from "react-router-dom";
 
 const SideDrawer = () => {
+  const navigate = useNavigate();
   const [toggleCollapseIcon, setToggleCollapseIcon] = useState(true);
   const [toggleBullIcon, setToggleBullIcon] = useState(true);
   const [toggleSmallIcon, setToggleSmallIcon] = useState(true);
@@ -102,7 +104,7 @@ const SideDrawer = () => {
       <div className={menuClasses}>
         <div className="sidebar_items_wrapper">
           <div className="sidebar_item">
-            <p>appgate</p>
+            <p onClick={() => navigate("/")}>appgate</p>
             <span onClick={toggleMenu}>
               <img
                 src={toggleCollapseIcon ? right : left}
@@ -111,7 +113,10 @@ const SideDrawer = () => {
             </span>
           </div>
           <div className="sidebar_item">
-            <p className={`${!togglePlayIcon && "green_text"}`}>
+            <p
+              className={`${!togglePlayIcon && "green_text"}`}
+              onClick={() => navigate("/sdp-video")}
+            >
               WATCH SDP VIDEO
             </p>
             <span onClick={() => toggleElements("play")}>

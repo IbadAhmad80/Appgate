@@ -1,0 +1,36 @@
+.screensaver-text {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  place-items: center;
+
+  p {
+    font-size: 80px;
+    font-weight: bolder;
+    animation: fade-in 3s;
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.fade-out-text p {
+  animation: fade-out 1s;
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0.2;
+    }
+  }
+}
