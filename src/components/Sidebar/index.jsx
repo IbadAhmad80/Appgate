@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./drawer.scss";
 
 import bull from "../../assets/icons/media/bull.png";
@@ -19,7 +19,7 @@ import { useNavigate } from "react-router-dom";
 
 const SideDrawer = () => {
   const navigate = useNavigate();
-  const [toggleCollapseIcon, setToggleCollapseIcon] = useState(true);
+  const [toggleArrowIcon, setToggleArrowIcon] = useState(true);
   const [toggleBullIcon, setToggleBullIcon] = useState(true);
   const [toggleSmallIcon, setToggleSmallIcon] = useState(true);
   const [toggleFrameIcon, setToggleFrameIcon] = useState(true);
@@ -32,6 +32,13 @@ const SideDrawer = () => {
     })
   );
 
+  useEffect(() => {
+    if (window.location.href.split("/")[3] === "sdp-video")
+      toggleElements("play");
+    else if (window.location.href.split("/")[3] === "use-cases")
+      toggleElements("frame");
+  }, []);
+
   const toggleMenu = () => {
     if (menuClasses.indexOf("sidebar_items_expand") === -1) {
       setMenuClasses(
@@ -40,7 +47,7 @@ const SideDrawer = () => {
           sidebar_items_expand: true,
         })
       );
-      setToggleCollapseIcon(false);
+      setToggleArrowIcon(false);
     } else {
       setMenuClasses(
         classNames({
@@ -48,7 +55,7 @@ const SideDrawer = () => {
           sidebar_items_collapse: true,
         })
       );
-      setToggleCollapseIcon(true);
+      setToggleArrowIcon(true);
     }
   };
 
@@ -104,29 +111,38 @@ const SideDrawer = () => {
       <div className={menuClasses}>
         <div className="sidebar_items_wrapper">
           <div className="sidebar_item">
-            <p onClick={() => navigate("/")}>appgate</p>
+            <p>appgate</p>
             <span onClick={toggleMenu}>
               <img
-                src={toggleCollapseIcon ? right : left}
+                src={toggleArrowIcon ? right : left}
                 alt="menu element img"
               />
             </span>
           </div>
-          <div className="sidebar_item">
-            <p
-              className={`${!togglePlayIcon && "green_text"}`}
-              onClick={() => navigate("/sdp-video")}
-            >
+          <div
+            className="sidebar_item"
+            onClick={() => {
+              toggleElements("play");
+              navigate("/sdp-video");
+            }}
+          >
+            <p className={`${!togglePlayIcon && "green_text"}`}>
               WATCH SDP VIDEO
             </p>
-            <span onClick={() => toggleElements("play")}>
+            <span>
               <img
                 src={togglePlayIcon ? play : playGreen}
                 alt="menu element img"
               />
             </span>
           </div>
-          <div className="sidebar_item">
+          <div
+            className="sidebar_item"
+            onClick={() => {
+              toggleElements("frame");
+              navigate("/use-cases");
+            }}
+          >
             <p className={`${!toggleFrameIcon && "green_text"}`}>USE CASES</p>
             <span onClick={() => toggleElements("frame")}>
               <img

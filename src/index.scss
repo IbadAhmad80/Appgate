@@ -1,6 +1,8 @@
-$primary-color: #30a08f;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+$primary-color: #60ebd6;
 $secondary-color: #d64527;
-$primary-font: "Poppins", sans-serif;
+$primary-font: "Roboto", sans-serif;
 
 body {
   margin: 0;
@@ -9,5 +11,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
+  background-color: black;
+}
+
+@font-face {
+  font-family: "GibsonNormal";
+  src: local("GibsonNormal"),
+    url("./fonts/gibson-font/Gibson-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "GibsonBold";
+  src: local("GibsonBold"),
+    url("./fonts/gibson-font/gibson-bold.ttf") format("truetype");
 }

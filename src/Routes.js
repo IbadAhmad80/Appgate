@@ -4,8 +4,9 @@ import LandingScreen from "./pages/LandingScreen";
 import SDPVideo from "./pages/SDPVideo";
 
 import IdleTimer from "react-idle-timer";
-import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import ScreenSaver from "./pages/ScreenSaver/index";
+import UseCasesWrapper from "./pages/UseCases";
 
 function App() {
   const navigate = useNavigate();
@@ -31,7 +32,7 @@ function App() {
         ref={(ref) => {
           idleTimer = ref;
         }}
-        timeout={1000 * 10 * 1}
+        timeout={1000 * 120 * 1}
         onActive={_onActive}
         onIdle={_onIdle}
         onAction={_onActive}
@@ -41,6 +42,7 @@ function App() {
         <Route path="/" element={<LandingScreen />} exact />
         <Route path="/screen-saver" element={<ScreenSaver />} exact />
         <Route path="/sdp-video" element={<SDPVideo />} exact />
+        <Route path="/use-cases" element={<UseCasesWrapper />} exact />
       </Routes>
     </>
   );
