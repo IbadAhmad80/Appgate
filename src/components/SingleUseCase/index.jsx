@@ -33,7 +33,7 @@ const UseCases = ({ setUseCaseID, useCaseID }) => {
         <SingleUseCase
           heading={"Hybrid Cloud"}
           text={
-            "Explore how Zero Trust principles, combined with right security architechture, can facilitate your hybrid cloud strategies."
+            "Explore how Zero Trust principles, combined with the right security architechture, can facilitate your hybrid cloud strategies."
           }
           id={3}
           setUseCaseID={setUseCaseID}

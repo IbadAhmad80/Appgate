@@ -14,8 +14,9 @@ const assets = [
   "/static/media/ani_background.b2cd75c9dd51a9a13549.mp4",
   "/static/css/main.3ecfec01.css",
   "/static/css/main.3ecfec01.css.map",
-  "/static/media/gibson-bold.456ba5f1d85e1d1e1cca.ttf",
-  "/static/media/Gibson-Regular.b6d02aea7dd75029f4fb.ttf",
+  "/static/media/Gibson-Bold.9bcb57722e5d934618d7.ttf",
+  "/static/media/Gibson-SemiBold.ce999240875def201c9d.ttf",
+  "/static/media/Gibson-Light.951603b4bb1681a1e47b.ttf",
   "/static/media/main.0eb143d8.js",
   "/static/media/main.0eb143d8.js.map",
   "https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Noto+Sans+JP:400,500,700|Noto+Sans+KR:400,500,700|Roboto:400,500,700&display=swap",
@@ -26,7 +27,7 @@ self.addEventListener("install", (evt) => {
   // console.log("service worker installed");
   evt.waitUntil(
     caches.open(staticCacheName).then((cache) => {
-      // cache.addAll(assets);
+      cache.addAll(assets);
     })
   );
 });
@@ -48,20 +49,20 @@ self.addEventListener("activate", (evt) => {
 
 // fetch event
 self.addEventListener("fetch", (evt) => {
-  // self.addEventListener("fetch", (evt) => {
-  //   console.log("fetch event", evt);
-  //   evt.respondWith(
-  //     caches.match(evt.request).then((cacheRes) => {
-  //       return (
-  //         cacheRes ||
-  //         fetch(evt.request).then((fetchRes) => {
-  //           return caches.open(dynamicCacheName).then((cache) => {
-  //             cache.put(evt.request.url, fetchRes.clone());
-  //             return fetchRes;
-  //           });
-  //         })
-  //       );
-  //     })
-  //   );
-  // });
+  self.addEventListener("fetch", (evt) => {
+    console.log("fetch event", evt);
+    evt.respondWith(
+      caches.match(evt.request).then((cacheRes) => {
+        return (
+          cacheRes ||
+          fetch(evt.request).then((fetchRes) => {
+            return caches.open(dynamicCacheName).then((cache) => {
+              cache.put(evt.request.url, fetchRes.clone());
+              return fetchRes;
+            });
+          })
+        );
+      })
+    );
+  });
 });

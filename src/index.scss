@@ -2,26 +2,31 @@
 
 $primary-color: #60ebd6;
 $secondary-color: #d64527;
-$primary-font: "Roboto", sans-serif;
+$gibson-light: "GibsonLight";
+$gibson-bold: "GibsonBold";
+$gibson-semi-bold: "GibsonSemiBold";
 
 body {
   margin: 0;
-  font-family: $primary-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
   box-sizing: border-box;
-  background-color: black;
-}
-
-@font-face {
-  font-family: "GibsonNormal";
-  src: local("GibsonNormal"),
-    url("./fonts/gibson-font/Gibson-Regular.ttf") format("truetype");
+  // background-color: black;
 }
 
 @font-face {
   font-family: "GibsonBold";
-  src: local("GibsonBold"),
-    url("./fonts/gibson-font/gibson-bold.ttf") format("truetype");
+  src: local("GibsonBold"), url("./fonts/Gibson-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "GibsonLight";
+  src: local("GibsonLight"), url("./fonts/Gibson-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "GibsonSemiBold";
+  src: local("GibsonSemiBold"),
+    url("./fonts/Gibson-SemiBold.ttf") format("truetype");
 }

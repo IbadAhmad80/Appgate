@@ -8,10 +8,14 @@ import document from "../../assets/icons/media/document.png";
 import vector1 from "../../assets/icons/media/Vector1.png";
 import leftChevron from "../../assets/icons/media/left-chevron.png";
 
-const HybridCloud = () => {
+const HybridCloud = ({ setUseCaseID, useCaseID }) => {
   return (
     <>
-      <div className="details-section-wrapper">
+      <div
+        className={`details-section-wrapper ${
+          !useCaseID && "fade-out-details-section"
+        }`}
+      >
         <div className="details-container">
           <img src={vector1} className="border_image" alt="left border img" />
           <div className="detailsTextContainer">
@@ -78,9 +82,9 @@ const HybridCloud = () => {
             </p>
           </div>
         </div>
-        <MoreInformation />
+        <MoreInformation useCaseID={useCaseID} />
       </div>
-      <div className="back-cta">
+      <div className="back-cta" onClick={() => setUseCaseID(null)}>
         <img
           src={leftChevron}
           alt="left chevron img"
@@ -94,9 +98,9 @@ const HybridCloud = () => {
 
 export default HybridCloud;
 
-const MoreInformation = () => {
+const MoreInformation = ({ useCaseID }) => {
   return (
-    <div className="info-wrapper">
+    <div className={`info-wrapper ${!useCaseID && "fade-out-info-wrapper"}`}>
       <img src={topBorder} alt="top border img" className="top-border" />
       <div className="text-container">
         <h4>Want More Info</h4>
@@ -107,10 +111,14 @@ const MoreInformation = () => {
 
         <div className="bullet-1">
           <img src={document} alt="document img" />
-          <p>
+          <a
+            href="https://www.google.com/url?q=https://www.scmagazine.com/cybercast/unleash-and-secure-the-cloud-with-zero-trust-access&sa=D&source=docs&ust=1643371985181629&usg=AOvVaw0XpbG4rTcfUmFh_o__YXCq"
+            target="_blank"
+            rel="noreferrer"
+          >
             ESG Webinar Replay – Unleash and Secure the Cloud with Zero Trust
             Access{" "}
-          </p>
+          </a>
         </div>
         <div className="bullet-2">
           <img src={document} alt="document img" />

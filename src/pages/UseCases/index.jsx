@@ -21,9 +21,18 @@ const UseCasesWrapper = () => {
       <SideDrawer />
       <div className="use-cases-wrapper">
         <UseCases setUseCaseID={setUseCaseID} useCaseID={useCaseID} />
-        {useCaseID === 1 && <SecureRemoteAccess />}
-        {useCaseID === 2 && <HybridEnterprise />}
-        {useCaseID === 3 && <HybridCloud />}
+        {useCaseID === 1 && (
+          <SecureRemoteAccess
+            setUseCaseID={setUseCaseID}
+            useCaseID={useCaseID}
+          />
+        )}
+        {useCaseID === 2 && (
+          <HybridEnterprise setUseCaseID={setUseCaseID} useCaseID={useCaseID} />
+        )}
+        {useCaseID === 3 && (
+          <HybridCloud setUseCaseID={setUseCaseID} useCaseID={useCaseID} />
+        )}
       </div>
     </div>
   );

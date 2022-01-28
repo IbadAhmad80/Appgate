@@ -8,23 +8,20 @@
   top: 0;
   bottom: 10;
   right: 10;
-  min-width: 450px;
-  max-width: 450px;
-  margin: 100px 0 0 70px;
+  min-width: 600px;
+  max-width: 600px;
+  margin: 120px 0 0 70px;
 
   .border_image {
-    height: 150px;
-    width: 50px;
+    margin-top: -10px;
+    height: 220px;
+    width: 70px;
     animation: translateText 0.55s linear 0s 1 forwards;
     transform: translateY(1000px);
   }
   .textContainer {
     color: white;
-    margin: 0;
-  }
-
-  @media (max-width: 600px) {
-    margin: 80px 0 0 30px;
+    margin: 0 0 0 -30px;
   }
 }
 
@@ -35,19 +32,26 @@
 
 .mainText {
   margin: 30px 0 20px 0 !important;
-  font-size: 50px;
+  font-size: 74px;
+  line-height: 5rem;
   font-weight: bolder;
   animation: translateText 0.55s linear 0.1s 1 forwards;
+  font-family: $gibson-semi-bold;
 }
 
 .thanksNote {
-  font-size: 13px;
+  font-size: 16px;
   animation: translateText 0.55s linear 0.2s 1 forwards;
+  font-family: $gibson-light;
+  letter-spacing: 0.05rem;
+  max-width: 600px;
+  margin: 5px 0;
+  line-height: 1.5rem;
 }
 
 .upperHr,
 .lowerHr {
-  width: 35px;
+  width: 40px;
   height: 1px;
   background-color: $primary-color;
 }
@@ -63,8 +67,11 @@
 .lowerSecondaryText,
 .upperSecondaryText {
   font-weight: bolder;
-  margin: 5px 0;
-  font-size: 13px;
+  margin: 10px 0;
+  font-size: 16px;
+  font-family: $gibson-semi-bold;
+  max-width: 420px;
+  line-height: 1.5rem;
 }
 
 .upperSecondaryText {

@@ -23,7 +23,7 @@ const SDPVideo = () => {
   };
 
   return (
-    <div className="sdp-video-container">
+    <div>
       <div onClick={handlePlayPause}>
         <video
           muted

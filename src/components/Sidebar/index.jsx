@@ -143,7 +143,7 @@ const SideDrawer = () => {
               navigate("/use-cases");
             }}
           >
-            <p className={`${!toggleFrameIcon && "green_text"}`}>USE CASES</p>
+            <p className={`${!toggleFrameIcon && "green_text"}`}>MORE ON SDP</p>
             <span onClick={() => toggleElements("frame")}>
               <img
                 src={toggleFrameIcon ? frame : frameGreen}

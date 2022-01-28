@@ -8,7 +8,7 @@ import document from "../../assets/icons/media/document.png";
 import vector1 from "../../assets/icons/media/Vector1.png";
 import leftChevron from "../../assets/icons/media/left-chevron.png";
 
-const SecureRemoteAccess = () => {
+const SecureRemoteAccess = ({ setUseCaseID }) => {
   return (
     <>
       <div className="details-section-wrapper">
@@ -67,7 +67,7 @@ const SecureRemoteAccess = () => {
         </div>
         <MoreInformation />
       </div>
-      <div className="back-cta">
+      <div className="back-cta" onClick={() => setUseCaseID(null)}>
         <img
           src={leftChevron}
           alt="left chevron img"

@@ -6,8 +6,9 @@ import topBorder from "../../assets/icons/media/Vector2.png";
 import bottomBorder from "../../assets/icons/media/Vector3.png";
 import document from "../../assets/icons/media/document.png";
 import vector1 from "../../assets/icons/media/Vector1.png";
+import leftChevron from "../../assets/icons/media/left-chevron.png";
 
-const HybridEnterprise = () => {
+const HybridEnterprise = ({ setUseCaseID }) => {
   return (
     <>
       <div className="details-section-wrapper">
@@ -84,7 +85,12 @@ const HybridEnterprise = () => {
         </div>
         <MoreInformation />
       </div>
-      <div className="back-cta">
+      <div className="back-cta" onClick={() => setUseCaseID(null)}>
+        <img
+          src={leftChevron}
+          alt="left chevron img"
+          className="left-chevron-image"
+        />
         <p>USE CASES</p>
       </div>
     </>
@@ -110,17 +116,20 @@ const MoreInformation = () => {
         </div>
         <div className="bullet-2">
           <img src={document} alt="document img" />
-          <p>451 Research Infographic </p>
+          <a
+            href="https://www.google.com/url?q=https://d3aafpijpsak2t.cloudfront.net/docs/Infographics/451_Research_ZTNA_Hybrid-Infographic.pdf?mtime%3D20210726085555%26focal%3Dnone%26utm_source%3Dwebsite%26utm_campaign%3D451ztnainfographic&sa=D&source=docs&ust=1643372123682611&usg=AOvVaw0liAOndcUVxPPNjcG2P0MI"
+            target="_blank"
+            rel="noreferrer"
+          >
+            451 Research Infographic{" "}
+          </a>
         </div>
         <div className="bullet-3">
           <img src={document} alt="document img" />
           <p>Forrester 2021 Zero Trust Network Access New Wave</p>
         </div>
+
         <div className="bullet-4">
-          <img src={document} alt="document img" />
-          <p>Forrester 2021 Zero Trust Network Access New Wave</p>
-        </div>
-        <div className="bullet-5">
           <img src={document} alt="document img" />
           <p> Nemertes Real Economic Value Report</p>
         </div>
