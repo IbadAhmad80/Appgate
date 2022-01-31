@@ -1,5 +1,10 @@
-.sdp-video-container {
+@import "../../index.scss";
+
+.challenge-screen-wrapper {
   position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 
 .background-video {
@@ -13,16 +18,4 @@
   width: 100%;
   object-fit: cover;
   object-position: center;
-}
-
-.play-img-container {
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
-}
-
-.play-img {
-  height: 80px;
-  width: 80px;
-  cursor: pointer;
 }

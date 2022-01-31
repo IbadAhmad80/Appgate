@@ -4,11 +4,11 @@ import "./styles.scss";
 import { useNavigate } from "react-router-dom";
 
 const ScreenSaver = () => {
-  const [removeScreenSaver, isRemoveScreenSaver] = useState(false);
+  const [removeScreenSaver, setRemoveScreenSaver] = useState(false);
   const navigate = useNavigate();
 
   const handleTransition = () => {
-    isRemoveScreenSaver(true);
+    setRemoveScreenSaver(true);
     setTimeout(() => navigate("/"), 600);
   };
 

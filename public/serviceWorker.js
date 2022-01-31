@@ -27,7 +27,7 @@ self.addEventListener("install", (evt) => {
   // console.log("service worker installed");
   evt.waitUntil(
     caches.open(staticCacheName).then((cache) => {
-      cache.addAll(assets);
+      // cache.addAll(assets);
     })
   );
 });
@@ -49,20 +49,20 @@ self.addEventListener("activate", (evt) => {
 
 // fetch event
 self.addEventListener("fetch", (evt) => {
-  self.addEventListener("fetch", (evt) => {
-    console.log("fetch event", evt);
-    evt.respondWith(
-      caches.match(evt.request).then((cacheRes) => {
-        return (
-          cacheRes ||
-          fetch(evt.request).then((fetchRes) => {
-            return caches.open(dynamicCacheName).then((cache) => {
-              cache.put(evt.request.url, fetchRes.clone());
-              return fetchRes;
-            });
-          })
-        );
-      })
-    );
-  });
+  // self.addEventListener("fetch", (evt) => {
+  //   console.log("fetch event", evt);
+  //   evt.respondWith(
+  //     caches.match(evt.request).then((cacheRes) => {
+  //       return (
+  //         cacheRes ||
+  //         fetch(evt.request).then((fetchRes) => {
+  //           return caches.open(dynamicCacheName).then((cache) => {
+  //             cache.put(evt.request.url, fetchRes.clone());
+  //             return fetchRes;
+  //           });
+  //         })
+  //       );
+  //     })
+  //   );
+  // });
 });

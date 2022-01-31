@@ -14,73 +14,75 @@ const HybridEnterprise = ({ setUseCaseID }) => {
       <div className="details-section-wrapper">
         <div className="details-container">
           <img src={vector1} className="border_image" alt="left border img" />
-          <div className="detailsTextContainer">
+          <div className="details-text-container">
             <h3 className="case-type">Hybrid Enterprise</h3>
-            <p className="primary-text-1">
-              Remote workforces are often isolated from the assets they need to
-              work. Today, around{" "}
-              <strong>
-                82% of organizations have some form of a hybrid workforce, while
-                78% have a hybrid cloud strategy.
-              </strong>
-            </p>
-            <p className="primary-text-2">
-              When you combine scattered workers and workloads, you get an
-              overly complex, large, and potentially vulnerable attack surface.
-              Disparate access controls can create a tangle of policies and
-              over-privileged users—factors that can exacerbate existing
-              vulnerabilities.
-              <br /> Legacy systems and old remote access solutions, like
-              Internet-exposed VPNs, are complicated to administer; don’t
-              adequately verify people; and increase your organization's
-              scannable attack surface—potentially leading to wide-open
-              networks.
-            </p>
-            <h6>Secure hybrid everything with Appgate SDP</h6>
-            <p className="primary-text-2">
-              Customers rated Appgate SDP 8.8 on a scale of 10 as technology
-              most strategic to hybrid workplaces. It provides consistent,
-              least-privileged access to resources, regardless of
-              location—including on-premise, cloud and hybrid. Legacy security
-              tech can’t.
-            </p>
-            <p className="hr-1" />
-            <p className="secondary-text-1">
-              Is a unified policy engine for all users and devices accessing
-              multi-cloud, hybrid cloud, microservices, on-premises and legacy
-              resources.
-            </p>
-            <p className="hr-2" />
-            <p className="secondary-text-2">
-              Applies Zero Trust access for users and services
-            </p>
-            <p className="hr-3" />
-            <p className="secondary-text-3">
-              Cloaks open ports to stop attackers from moving laterally.
-            </p>
-            <p className="hr-4" />
-            <p className="secondary-text-4">
-              Continuously authenticates users based on contextual risk and
-              device posture
-            </p>
-            <p className="hr-5" />
-            <p className="secondary-text-5">
-              Enables detailed segmentation policies across your entire IT
-              footprint
-            </p>
-            <p className="hr-6" />
-            <p className="secondary-text-6">
-              Delivers fast, secure and concurrent connections from any user to
-              multiple resources simultaneously
-            </p>
-            <p className="hr-7" />
-            <p className="secondary-text-7">
-              Scales as needed, without bandwidth constraints
-            </p>
-            <p className="hr-8" />
-            <p className="secondary-text-8">
-              Integrates with existing security tools via programmable APIs
-            </p>
+            <div className="text-body-container">
+              <p className="primary-text-1">
+                Remote workforces are often isolated from the assets they need
+                to work. Today, around{" "}
+                <strong>
+                  82% of organizations have some form of a hybrid workforce,
+                  while 78% have a hybrid cloud strategy.
+                </strong>
+              </p>
+              <p className="primary-text-2">
+                When you combine scattered workers and workloads, you get an
+                overly complex, large, and potentially vulnerable attack
+                surface. Disparate access controls can create a tangle of
+                policies and over-privileged users—factors that can exacerbate
+                existing vulnerabilities.
+                <br /> Legacy systems and old remote access solutions, like
+                Internet-exposed VPNs, are complicated to administer; don’t
+                adequately verify people; and increase your organization's
+                scannable attack surface—potentially leading to wide-open
+                networks.
+              </p>
+              <h6>Secure hybrid everything with Appgate SDP</h6>
+              <p className="primary-text-2">
+                Customers rated Appgate SDP 8.8 on a scale of 10 as technology
+                most strategic to hybrid workplaces. It provides consistent,
+                least-privileged access to resources, regardless of
+                location—including on-premise, cloud and hybrid. Legacy security
+                tech can’t.
+              </p>
+              <p className="hr-1" />
+              <p className="secondary-text-1">
+                Is a unified policy engine for all users and devices accessing
+                multi-cloud, hybrid cloud, microservices, on-premises and legacy
+                resources.
+              </p>
+              <p className="hr-2" />
+              <p className="secondary-text-2">
+                Applies Zero Trust access for users and services
+              </p>
+              <p className="hr-3" />
+              <p className="secondary-text-3">
+                Cloaks open ports to stop attackers from moving laterally.
+              </p>
+              <p className="hr-4" />
+              <p className="secondary-text-4">
+                Continuously authenticates users based on contextual risk and
+                device posture
+              </p>
+              <p className="hr-5" />
+              <p className="secondary-text-5">
+                Enables detailed segmentation policies across your entire IT
+                footprint
+              </p>
+              <p className="hr-6" />
+              <p className="secondary-text-6">
+                Delivers fast, secure and concurrent connections from any user
+                to multiple resources simultaneously
+              </p>
+              <p className="hr-7" />
+              <p className="secondary-text-7">
+                Scales as needed, without bandwidth constraints
+              </p>
+              <p className="hr-8" />
+              <p className="secondary-text-8">
+                Integrates with existing security tools via programmable APIs
+              </p>
+            </div>
           </div>
         </div>
         <MoreInformation />

@@ -17,7 +17,7 @@ import eventGreen from "../../assets/icons/media/event-green.png";
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
 
-const SideDrawer = () => {
+const SideDrawer = ({ isFadeOutUseCases }) => {
   const navigate = useNavigate();
   const [toggleArrowIcon, setToggleArrowIcon] = useState(true);
   const [toggleBullIcon, setToggleBullIcon] = useState(true);
@@ -34,12 +34,14 @@ const SideDrawer = () => {
 
   useEffect(() => {
     if (window.location.href.split("/")[3] === "sdp-video")
-      toggleElements("play");
+      toggleFocusElements("play");
     else if (window.location.href.split("/")[3] === "use-cases")
-      toggleElements("frame");
+      toggleFocusElements("frame");
+    else if (window.location.href.split("/")[3] === "challenge")
+      toggleFocusElements("bull");
   }, []);
 
-  const toggleMenu = () => {
+  const toggleMenuClasses = () => {
     if (menuClasses.indexOf("sidebar_items_expand") === -1) {
       setMenuClasses(
         classNames({
@@ -59,7 +61,7 @@ const SideDrawer = () => {
     }
   };
 
-  const toggleElements = (toggleIcon) => {
+  const toggleFocusElements = (toggleIcon) => {
     switch (toggleIcon) {
       case "play":
         setToggleEventIcon(true);
@@ -112,7 +114,7 @@ const SideDrawer = () => {
         <div className="sidebar_items_wrapper">
           <div className="sidebar_item">
             <p>appgate</p>
-            <span onClick={toggleMenu}>
+            <span onClick={toggleMenuClasses}>
               <img
                 src={toggleArrowIcon ? right : left}
                 alt="menu element img"
@@ -122,7 +124,7 @@ const SideDrawer = () => {
           <div
             className="sidebar_item"
             onClick={() => {
-              toggleElements("play");
+              toggleFocusElements("play");
               navigate("/sdp-video");
             }}
           >
@@ -139,23 +141,32 @@ const SideDrawer = () => {
           <div
             className="sidebar_item"
             onClick={() => {
-              toggleElements("frame");
+              toggleFocusElements("frame");
               navigate("/use-cases");
             }}
           >
             <p className={`${!toggleFrameIcon && "green_text"}`}>MORE ON SDP</p>
-            <span onClick={() => toggleElements("frame")}>
+            <span onClick={() => toggleFocusElements("frame")}>
               <img
                 src={toggleFrameIcon ? frame : frameGreen}
                 alt="menu element img"
               />
             </span>
           </div>
-          <div className="sidebar_item">
+          <div
+            className="sidebar_item"
+            onClick={() => {
+              toggleFocusElements("bull");
+              isFadeOutUseCases(true);
+              setTimeout(() => {
+                navigate("/challenge");
+              }, 500);
+            }}
+          >
             <p className={`${!toggleBullIcon && "green_text"}`}>
               ZERO BS CHALLENGE
             </p>
-            <span onClick={() => toggleElements("bull")}>
+            <span onClick={() => toggleFocusElements("bull")}>
               <img
                 src={toggleBullIcon ? bull : bullGreen}
                 alt="menu element img"
@@ -166,7 +177,7 @@ const SideDrawer = () => {
             <p className={`${!toggleSmallIcon && "green_text"}`}>
               SEE DEMO NOW
             </p>
-            <span onClick={() => toggleElements("small")}>
+            <span onClick={() => toggleFocusElements("small")}>
               <img
                 src={toggleSmallIcon ? small : smallGreen}
                 alt="menu element img"
@@ -177,7 +188,7 @@ const SideDrawer = () => {
             <p className={`${!toggleEventIcon && "green_text"}`}>
               SCHEDULE DEMO
             </p>
-            <span onClick={() => toggleElements("event")}>
+            <span onClick={() => toggleFocusElements("event")}>
               <img
                 src={toggleEventIcon ? event : eventGreen}
                 alt="menu element img"

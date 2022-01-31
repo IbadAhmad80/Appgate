@@ -18,68 +18,71 @@ const HybridCloud = ({ setUseCaseID, useCaseID }) => {
       >
         <div className="details-container">
           <img src={vector1} className="border_image" alt="left border img" />
-          <div className="detailsTextContainer">
+          <div className="details-text-container">
             <h3 className="case-type">Hybrid Cloud</h3>
-            <p className="primary-text-1">
-              Cloud adoption will very soon be the norm. IDC predicts
-              <strong>
-                90% of new enterprise applications will be cloud-native by 2022.
-              </strong>
-              However, the cloud's inherent dynamism makes policy management
-              more difficult. The complexity of managing network and
-              connectivity tools across hybrid and multi-cloud environments can
-              introduce unexpected vulnerabilities—like the likelihood of human
-              error. Older, legacy tools or inexperienced developers can amplify
-              this effect.
-            </p>
-            <p className="primary-text-2">
-              In order to simplify operations, administrators often have to
-              sacrifice security for convenience and expediency—leaving your
-              cloud resources easily discoverable by those with malign intent.
-            </p>
-            <h6>Make the Cloud work for you with Appgate SDP</h6>
-            <p className="primary-text-2">
-              Customers rated Appgate SDP 8.8 on a scale of 10 as technology
-              most strategic to hybrid workplaces. It provides consistent,
-              least-privileged access to resources, regardless of
-              location—including on-premise, cloud and hybrid. Legacy security
-              tech can’t.
-            </p>
-            <p className="hr-1" />
-            <p className="secondary-text-1">
-              Unifies secure access for all users, devices and disparate
-              resources spanning multi-cloud, hybrid cloud and microservices
-            </p>
-            <p className="hr-2" />
-            <p className="secondary-text-2">
-              Makes cloud resources invisible by cloaking open ports
-            </p>
-            <p className="hr-3" />
-            <p className="secondary-text-3">
-              Continuously authenticates users based on contextual risk and
-              device posture
-            </p>
-            <p className="hr-4" />
-            <p className="secondary-text-4">
-              Secures access between interconnected resources, containers and
-              microservices
-            </p>
-            <p className="hr-5" />
-            <p className="secondary-text-5">
-              Delivers fast, secure and concurrent connections from any user to
-              multiple resources simultaneously
-            </p>
+            <div className="text-body-container">
+              <p className="primary-text-1">
+                Cloud adoption will very soon be the norm. IDC predicts
+                <strong>
+                  90% of new enterprise applications will be cloud-native by
+                  2022.
+                </strong>
+                However, the cloud's inherent dynamism makes policy management
+                more difficult. The complexity of managing network and
+                connectivity tools across hybrid and multi-cloud environments
+                can introduce unexpected vulnerabilities—like the likelihood of
+                human error. Older, legacy tools or inexperienced developers can
+                amplify this effect.
+              </p>
+              <p className="primary-text-2">
+                In order to simplify operations, administrators often have to
+                sacrifice security for convenience and expediency—leaving your
+                cloud resources easily discoverable by those with malign intent.
+              </p>
+              <h6>Make the Cloud work for you with Appgate SDP</h6>
+              <p className="primary-text-2">
+                Customers rated Appgate SDP 8.8 on a scale of 10 as technology
+                most strategic to hybrid workplaces. It provides consistent,
+                least-privileged access to resources, regardless of
+                location—including on-premise, cloud and hybrid. Legacy security
+                tech can’t.
+              </p>
+              <p className="hr-1" />
+              <p className="secondary-text-1">
+                Unifies secure access for all users, devices and disparate
+                resources spanning multi-cloud, hybrid cloud and microservices
+              </p>
+              <p className="hr-2" />
+              <p className="secondary-text-2">
+                Makes cloud resources invisible by cloaking open ports
+              </p>
+              <p className="hr-3" />
+              <p className="secondary-text-3">
+                Continuously authenticates users based on contextual risk and
+                device posture
+              </p>
+              <p className="hr-4" />
+              <p className="secondary-text-4">
+                Secures access between interconnected resources, containers and
+                microservices
+              </p>
+              <p className="hr-5" />
+              <p className="secondary-text-5">
+                Delivers fast, secure and concurrent connections from any user
+                to multiple resources simultaneously
+              </p>
 
-            <p className="hr-6" />
-            <p className="secondary-text-6">
-              Enables API-driven automation within your CI/CD workflows
-            </p>
+              <p className="hr-6" />
+              <p className="secondary-text-6">
+                Enables API-driven automation within your CI/CD workflows
+              </p>
 
-            <p className="hr-7" />
-            <p className="secondary-text-7">
-              Removes the burden and complexity of securely interconnecting
-              heterogeneous, geographically dispersed cloud environments
-            </p>
+              <p className="hr-7" />
+              <p className="secondary-text-7">
+                Removes the burden and complexity of securely interconnecting
+                heterogeneous, geographically dispersed cloud environments
+              </p>
+            </div>
           </div>
         </div>
         <MoreInformation useCaseID={useCaseID} />

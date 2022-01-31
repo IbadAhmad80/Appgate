@@ -1,7 +1,9 @@
+@import "../../index.scss";
+
 .screensaver-text {
   display: grid;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   place-items: center;
   background-color: white;
 
@@ -9,6 +11,7 @@
     font-size: 80px;
     font-weight: bolder;
     animation: fade-in 3s;
+    font-family: $gibson-semi-bold;
 
     @keyframes fade-in {
       0% {
