@@ -1,0 +1,138 @@
+@import "../../index.scss";
+
+.modal-container {
+  position: absolute;
+  width: 626px;
+  height: 691px;
+  top: 15%;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  transform: translate(-50%, -50%);
+  border: 5px solid white;
+  border-radius: 16px;
+  animation: scaleIn 0.3s ease-out forwards;
+  background-color: white;
+
+  h1 {
+    font-size: 40px;
+    margin: 40px 20px 20px 20px;
+    letter-spacing: 0.05rem;
+    color: #666766;
+    font-family: $gibson-light;
+    text-transform: uppercase;
+  }
+
+  h6 {
+    font-size: 18px;
+    margin: 20px 20px 40px 20px;
+    color: #666766;
+    font-family: $gibson-light;
+  }
+}
+
+.close-icon {
+  float: right;
+  padding: 1rem 1rem 0 0;
+}
+
+.modal-container p {
+  font-family: $gibson-light;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: normal;
+  color: #4b4b4b;
+  margin: 20px 20px 20px 20px;
+}
+
+input[type="text"],
+input[type="email"] {
+  display: block;
+  width: 82%;
+  margin: 20px auto;
+  height: 40px;
+  border-radius: 16px;
+  outline: none;
+  border-radius: 20px;
+  border: 1px solid #d8cec8;
+  padding: 0 2rem;
+  font-style: italic;
+  letter-spacing: 0.01rem;
+  font-family: $gibson-light;
+  font-size: 16px;
+  color: #8a6f6a;
+}
+
+.hr {
+  height: 1px;
+  margin: 30px auto;
+  width: 90%;
+  color: #8a6f6a;
+  background-color: #8a6f6a;
+}
+
+.content-packs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+}
+
+input[type="checkbox"] {
+  margin-top: -0.5px;
+  height: 18px;
+  vertical-align: middle;
+  width: 20px;
+  color: red;
+}
+
+label span {
+  letter-spacing: 0.01rem;
+  font-family: 11px;
+  color: #4b4b4b;
+  font-family: $gibson-light;
+  padding: 2px 2px;
+  vertical-align: middle;
+}
+
+.susbcription-text {
+  margin: 40px 20px;
+}
+
+.submit-btn {
+  margin: 30px;
+  height: 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 12px 20px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.5);
+  background-color: #b23610;
+  border: none;
+  color: white;
+  font-family: $gibson-semi-bold;
+  letter-spacing: 0.02rem;
+  text-transform: uppercase;
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+
+  25% {
+    transform: scale(0.25);
+  }
+
+  50% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

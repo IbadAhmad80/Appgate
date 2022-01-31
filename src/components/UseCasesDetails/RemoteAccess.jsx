@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./details.scss";
 import "./info.scss";
 
@@ -7,8 +7,11 @@ import bottomBorder from "../../assets/icons/media/Vector3.png";
 import document from "../../assets/icons/media/document.png";
 import vector1 from "../../assets/icons/media/Vector1.png";
 import leftChevron from "../../assets/icons/media/left-chevron.png";
+import Modal from "../Modal";
 
 const RemoteAccess = ({ setUseCaseID }) => {
+  const [closeModal, isCloseModal] = useState(true);
+
   return (
     <>
       <div className="details-section-wrapper">
@@ -71,7 +74,7 @@ const RemoteAccess = ({ setUseCaseID }) => {
             </div>
           </div>
         </div>
-        <MoreInformation />
+        <MoreInformation isCloseModal={isCloseModal} />
       </div>
       <div className="back-cta" onClick={() => setUseCaseID(null)}>
         <img
@@ -81,13 +84,14 @@ const RemoteAccess = ({ setUseCaseID }) => {
         />
         <p>USE CASES</p>
       </div>
+      <Modal isCloseModal={() => isCloseModal(true)} closeModal={closeModal} />
     </>
   );
 };
 
 export default RemoteAccess;
 
-const MoreInformation = () => {
+const MoreInformation = ({ isCloseModal }) => {
   return (
     <div className="info-wrapper">
       <img src={topBorder} alt="top border img" className="top-border" />
@@ -111,7 +115,9 @@ const MoreInformation = () => {
           <p>Forrester 2021 Zero Trust Network Access New Wave</p>
         </div>
       </div>
-      <button className="email-button">Get it Emailed To You</button>
+      <button className="email-button" onClick={() => isCloseModal(false)}>
+        Get it Emailed To You
+      </button>
       <img src={bottomBorder} alt="bottom border" className="bottom-border" />
     </div>
   );

@@ -157,10 +157,12 @@ const SideDrawer = ({ isFadeOutUseCases }) => {
             className="sidebar_item"
             onClick={() => {
               toggleFocusElements("bull");
-              isFadeOutUseCases(true);
-              setTimeout(() => {
-                navigate("/challenge");
-              }, 500);
+              isFadeOutUseCases && isFadeOutUseCases(true);
+              isFadeOutUseCases
+                ? setTimeout(() => {
+                    navigate("/challenge");
+                  }, 500)
+                : navigate("/challenge");
             }}
           >
             <p className={`${!toggleBullIcon && "green_text"}`}>
