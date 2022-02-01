@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import "./styles.scss";
 
 import bullArt from "../../assets/icons/media/bull-art.png";
-import topBorder from "../../assets/icons/media/border-right.png";
-import bottomBorder from "../../assets/icons/media/left-border.png";
+import topBorder from "../../assets/icons/media/top@3x.png";
+import bottomBorder from "../../assets/icons/media/bottom@3x.png";
 
 export default function LandingScreen({ quizOpen, isOuizOpen }) {
   return (

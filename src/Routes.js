@@ -33,7 +33,7 @@ function App() {
         ref={(ref) => {
           idleTimer = ref;
         }}
-        timeout={1000 * 120 * 1}
+        timeout={1000 * 600 * 1}
         onActive={_onActive}
         onIdle={_onIdle}
         onAction={_onActive}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./details.scss";
 import "./info.scss";
 
@@ -7,8 +7,10 @@ import bottomBorder from "../../assets/icons/media/Vector3.png";
 import document from "../../assets/icons/media/document.png";
 import vector1 from "../../assets/icons/media/Vector1.png";
 import leftChevron from "../../assets/icons/media/left-chevron.png";
+import Modal from "../Modal/index";
 
 const HybridCloud = ({ setUseCaseID, useCaseID }) => {
+  const [closeModal, isCloseModal] = useState(true);
   return (
     <>
       <div
@@ -85,7 +87,7 @@ const HybridCloud = ({ setUseCaseID, useCaseID }) => {
             </div>
           </div>
         </div>
-        <MoreInformation useCaseID={useCaseID} />
+        <MoreInformation useCaseID={useCaseID} isCloseModal={isCloseModal} />
       </div>
       <div className="back-cta" onClick={() => setUseCaseID(null)}>
         <img
@@ -95,13 +97,14 @@ const HybridCloud = ({ setUseCaseID, useCaseID }) => {
         />
         <p>USE CASES</p>
       </div>
+      <Modal isCloseModal={() => isCloseModal(true)} closeModal={closeModal} />
     </>
   );
 };
 
 export default HybridCloud;
 
-const MoreInformation = ({ useCaseID }) => {
+const MoreInformation = ({ useCaseID, isCloseModal }) => {
   return (
     <div className={`info-wrapper ${!useCaseID && "fade-out-info-wrapper"}`}>
       <img src={topBorder} alt="top border img" className="top-border" />
@@ -150,7 +153,9 @@ const MoreInformation = ({ useCaseID }) => {
           <p>Podcast- 1/27- Cloud- crawl, walk, run- JimA/Friedrich</p>
         </div>
       </div>
-      <button className="email-button">Get it Emailed To You</button>
+      <button className="email-button" onClick={() => isCloseModal(false)}>
+        Get it Emailed To You
+      </button>
       <img src={bottomBorder} alt="bottom border" className="bottom-border" />
     </div>
   );

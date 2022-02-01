@@ -82,10 +82,19 @@ input[type="email"] {
 
 input[type="checkbox"] {
   margin-top: -0.5px;
-  height: 18px;
+  height: 16px;
   vertical-align: middle;
   width: 20px;
   color: red;
+}
+
+label {
+  display: none;
+}
+
+.content-packs label,
+.susbcription-text label {
+  display: unset;
 }
 
 label span {
@@ -97,8 +106,12 @@ label span {
   vertical-align: middle;
 }
 
-.susbcription-text {
+.susbcription-text label {
   margin: 40px 20px;
+  span {
+    padding: 2px 0 0 0;
+    display: inline-block;
+  }
 }
 
 .submit-btn {
