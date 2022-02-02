@@ -16,25 +16,33 @@ const UseCasesWrapper = () => {
 
   return (
     <div>
-      <video muted autoPlay loop className="use-cases-video">
-        <source src={ani_background} type="video/mp4" />
-      </video>
-      <div className={`${fadeOutUseCases && "fade-out-screen"}`}>
-        <SideDrawer isFadeOutUseCases={isFadeOutUseCases} />
-        <div className="use-cases-wrapper">
-          <UseCases setUseCaseID={setUseCaseID} useCaseID={useCaseID} />
-          {useCaseID === 1 && (
-            <RemoteAccess setUseCaseID={setUseCaseID} useCaseID={useCaseID} />
-          )}
-          {useCaseID === 2 && (
-            <HybridEnterprise
-              setUseCaseID={setUseCaseID}
-              useCaseID={useCaseID}
-            />
-          )}
-          {useCaseID === 3 && (
-            <HybridCloud setUseCaseID={setUseCaseID} useCaseID={useCaseID} />
-          )}
+      <div
+        className={`layout-flex ${
+          fadeOutUseCases ? "fade-out-screen" : "fade-in-use-cases"
+        } `}
+      >
+        <div className="sidebar-flex">
+          <SideDrawer isFadeOutUseCases={isFadeOutUseCases} />
+        </div>
+        <div className="content-flex">
+          <video muted autoPlay loop className="use-cases-video">
+            <source src={ani_background} type="video/mp4" />
+          </video>
+          <div className="use-cases-wrapper">
+            <UseCases setUseCaseID={setUseCaseID} useCaseID={useCaseID} />
+            {useCaseID === 1 && (
+              <RemoteAccess setUseCaseID={setUseCaseID} useCaseID={useCaseID} />
+            )}
+            {useCaseID === 2 && (
+              <HybridEnterprise
+                setUseCaseID={setUseCaseID}
+                useCaseID={useCaseID}
+              />
+            )}
+            {useCaseID === 3 && (
+              <HybridCloud setUseCaseID={setUseCaseID} useCaseID={useCaseID} />
+            )}
+          </div>
         </div>
       </div>
     </div>

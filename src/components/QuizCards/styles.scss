@@ -3,15 +3,43 @@
 .quiz-card-container {
   margin: 0 auto;
   padding: 1rem 2rem;
-  background-color: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  // height: 100%;
 
-  .hr {
+  .container {
     width: 100%;
     margin: 30px auto;
     height: 6px;
     color: #d8cec8;
+    background-color: #d8cec8;
+    border-radius: 16px;
+
+    .progress {
+      background-color: #d64527;
+      height: 6px;
+      border-radius: 16px;
+    }
+  }
+
+  .choice-images {
+    position: absolute;
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-between;
+
+    .bs-image {
+      height: 150px;
+      width: 150px;
+      opacity: 0;
+      // display: none;
+    }
+
+    .no-bs-image {
+      height: 150px;
+      width: 150px;
+      opacity: 0;
+      // display: none;
+    }
   }
 
   h4 {
@@ -31,5 +59,23 @@
     font-family: $gibson-light;
     letter-spacing: 1.68px;
     color: #666766;
+
+    @media (max-width: 1250px) {
+      font-size: clamp(2rem, 4vw, 9rem);
+    }
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s linear 0.1s forwards;
+}
+
+@keyframes fadeIn {
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

@@ -32,3 +32,21 @@ body {
   src: local("GibsonSemiBold"),
     url("./fonts/Gibson-SemiBold.ttf") format("truetype");
 }
+
+.layout-flex {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+
+  .sidebar-flex {
+    width: 70px;
+  }
+
+  .content-flex {
+    position: relative;
+  }
+}

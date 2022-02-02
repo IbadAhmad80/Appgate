@@ -13,12 +13,18 @@ export default function BSChallenge() {
 
   return (
     <div className="challenge-screen-wrapper">
-      <video muted autoPlay loop className="use-cases-video">
-        <source src={ani_background} type="video/mp4" />
-      </video>
-      <LandingScreen quizOpen={quizOpen} isOuizOpen={isOuizOpen} />
-      <SideDrawer />
-      {quizOpen && <ChallengeQuestions />}
+      <div className="layout-flex">
+        <div className="sidebar-flex">
+          <SideDrawer />
+        </div>
+        <div className="content-flex">
+          <video muted autoPlay loop className="use-cases-video">
+            <source src={ani_background} type="video/mp4" />
+          </video>
+          <LandingScreen quizOpen={quizOpen} isOuizOpen={isOuizOpen} />
+          {quizOpen && <ChallengeQuestions />}
+        </div>
+      </div>
     </div>
   );
 }
