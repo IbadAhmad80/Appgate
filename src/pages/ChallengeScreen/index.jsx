@@ -12,7 +12,7 @@ export default function BSChallenge() {
   const [quizOpen, isOuizOpen] = useState(false);
 
   return (
-    <div className="challenge-screen-wrapper">
+    <div className="challenge-screen-wrapper fade-in-challenge">
       <div className="layout-flex">
         <div className="sidebar-flex">
           <SideDrawer />

@@ -60,6 +60,10 @@
     letter-spacing: 1.68px;
     color: #666766;
 
+    @media (min-width: 140px) {
+      font-size: clamp(2rem, 4vw, 9rem);
+    }
+
     @media (max-width: 1250px) {
       font-size: clamp(2rem, 4vw, 9rem);
     }

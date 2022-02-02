@@ -39,6 +39,8 @@ const SideDrawer = ({ isFadeOutUseCases }) => {
       toggleFocusElements("frame");
     else if (window.location.href.split("/")[3] === "challenge")
       toggleFocusElements("bull");
+    else if (window.location.href.split("/")[3] === "demo")
+      toggleFocusElements("small");
   }, []);
 
   const toggleMenuClasses = () => {
@@ -158,11 +160,7 @@ const SideDrawer = ({ isFadeOutUseCases }) => {
             onClick={() => {
               toggleFocusElements("bull");
               isFadeOutUseCases && isFadeOutUseCases(true);
-              isFadeOutUseCases
-                ? setTimeout(() => {
-                    navigate("/challenge");
-                  }, 500)
-                : navigate("/challenge");
+              navigate("/challenge");
             }}
           >
             <p className={`${!toggleBullIcon && "green_text"}`}>
@@ -175,7 +173,13 @@ const SideDrawer = ({ isFadeOutUseCases }) => {
               />
             </span>
           </div>
-          <div className="sidebar_item">
+          <div
+            className="sidebar_item"
+            onClick={() => {
+              toggleFocusElements("small");
+              navigate("/demo");
+            }}
+          >
             <p className={`${!toggleSmallIcon && "green_text"}`}>
               SEE DEMO NOW
             </p>
