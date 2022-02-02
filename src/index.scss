@@ -1,11 +1,52 @@
-$primary-color: #30a08f;
-$primary-font: "Poppins", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+$primary-color: #60ebd6;
+$secondary-color: #d64527;
+$gibson-light: "GibsonLight";
+$gibson-bold: "GibsonBold";
+$gibson-semi-bold: "GibsonSemiBold";
 
 body {
   margin: 0;
-  font-family: $primary-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --toastify-toast-width: 600px !important;
   padding: 0;
   box-sizing: border-box;
+  background-color: black;
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: "GibsonBold";
+  src: local("GibsonBold"), url("./fonts/Gibson-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "GibsonLight";
+  src: local("GibsonLight"), url("./fonts/Gibson-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "GibsonSemiBold";
+  src: local("GibsonSemiBold"),
+    url("./fonts/Gibson-SemiBold.ttf") format("truetype");
+}
+
+.layout-flex {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+
+  .sidebar-flex {
+    width: 70px;
+  }
+
+  .content-flex {
+    position: relative;
+  }
 }

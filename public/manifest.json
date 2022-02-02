@@ -3,9 +3,9 @@
   "short_name": "Appgate",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#FFE9D2",
+  "background_color": "#30a08f",
   "theme_color": "#30a08f",
-  "orientation": "portrait-primary",
+  "orientation": "landscape-primary",
   "icons": [
     {
       "src": "favicon.ico",

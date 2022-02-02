@@ -1,11 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
-import App from "./App";
+import App from "./Routes";
+import "./fonts/Gibson-Bold.ttf";
+import "./fonts/Gibson-Light.ttf";
+import "./fonts/Gibson-SemiBold.ttf";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
