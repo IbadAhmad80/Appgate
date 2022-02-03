@@ -16,7 +16,7 @@
     margin-top: -10px;
     height: 220px;
     width: 70px;
-    animation: translateText 0.55s linear 0s 1 forwards;
+    animation: translateBorder 0.35s linear 0s 1 forwards;
     transform: translateY(1000px);
   }
   .textContainer {
@@ -35,13 +35,13 @@
   font-size: 74px;
   line-height: 5rem;
   font-weight: bolder;
-  animation: translateText 0.55s linear 0.1s 1 forwards;
+  animation: translateText 0.35s linear 0.2s 1 forwards;
   font-family: $gibson-semi-bold;
 }
 
 .thanksNote {
   font-size: 16px;
-  animation: translateText 0.55s linear 0.2s 1 forwards;
+  animation: translateText 0.35s linear 0.3s 1 forwards;
   font-family: $gibson-light;
   letter-spacing: 0.05rem;
   max-width: 600px;
@@ -57,11 +57,11 @@
 }
 
 .upperHr {
-  animation: translateText 0.55s linear 0.3s 1 forwards;
+  animation: translateText 0.35s linear 0.4s 1 forwards;
 }
 
 .lowerHr {
-  animation: translateText 0.55s linear 0.5s 1 forwards;
+  animation: translateText 0.35s linear 0.6s 1 forwards;
 }
 
 .lowerSecondaryText,
@@ -75,14 +75,23 @@
 }
 
 .upperSecondaryText {
-  animation: translateText 0.55s linear 0.4s 1 forwards;
+  animation: translateText 0.35s linear 0.5s 1 forwards;
 }
 
 .lowerSecondaryText {
-  animation: translateText 0.55s linear 0.6s 1 forwards;
+  animation: translateText 0.35s linear 0.7s 1 forwards;
 }
 
 @keyframes translateText {
+  50% {
+    transform: translateY(500px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes translateBorder {
   50% {
     transform: translateY(500px);
   }

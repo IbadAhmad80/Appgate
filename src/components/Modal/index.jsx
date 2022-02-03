@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom";
 
-import close from "../../assets/icons/media/close-remove.png";
+import close from "../../assets/icons/media/close.png";
 
 import "./styles.scss";
 import Form from "./Form";

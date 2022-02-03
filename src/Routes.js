@@ -8,6 +8,8 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import ScreenSaver from "./pages/ScreenSaver/index";
 import UseCasesWrapper from "./pages/UseCases";
 import BSChallenge from "./pages/ChallengeScreen/index";
+import Demo from "./pages/DemoScreen/index";
+import ScheduleDemo from "./pages/ScheduleDemo/index";
 
 function App() {
   const navigate = useNavigate();
@@ -45,6 +47,8 @@ function App() {
         <Route path="/sdp-video" element={<SDPVideo />} exact />
         <Route path="/use-cases" element={<UseCasesWrapper />} exact />
         <Route path="/challenge" element={<BSChallenge />} exact />
+        <Route path="/demo" element={<Demo />} exact />
+        <Route path="/schedule-demo" element={<ScheduleDemo />} exact />
       </Routes>
     </>
   );

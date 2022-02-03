@@ -2,12 +2,12 @@ import React from "react";
 
 import "./styles.scss";
 
-import topBorder from "../../assets/icons/media/top@3x.png";
-import bottomBorder from "../../assets/icons/media/bottom@3x.png";
+import topBorder from "../../assets/icons/media/done1.png";
+import bottomBorder from "../../assets/icons/media/done2.png";
+import check from "../../assets/icons/media/check.png";
+import close from "../../assets/icons/media/close-remove.png";
 
-import { resultCardSummary } from "./Text";
-
-export default function ChallengeResults() {
+export default function ChallengeResults({ challengeQuestion, userAnswers }) {
   return (
     <div className="results-screen-wrapper">
       <div className="card-container">
@@ -31,20 +31,35 @@ export default function ChallengeResults() {
         />
       </div>
       <div className="result-card-wrapper">
-        {resultCardSummary.map(({ id, question, answer }) => {
-          return <ResultCard key={id} statement={question} answer={answer} />;
-        })}
+        {challengeQuestion.map(
+          ({ id, question, justification, answer }, index) => {
+            return (
+              <ResultCard
+                key={index}
+                statement={question}
+                answer={answer}
+                justification={justification}
+                userAnswer={userAnswers[index]}
+              />
+            );
+          }
+        )}
       </div>
     </div>
   );
 }
 
-function ResultCard({ type, answer, statement }) {
+function ResultCard({ answer, statement, justification, userAnswer }) {
   return (
     <div className="result-card">
-      <p>Zero BS</p>
+      <p>{answer ? "Zero BS" : "BS"}</p>
+      <img
+        src={answer === userAnswer ? check : close}
+        alt="choice img"
+        className="score-img"
+      />
       <h4 className="question">"{statement}"</h4>
-      <h4 className="answer">{answer}</h4>
+      <h4 className="answer">{justification.slice(0, 300)}</h4>
     </div>
   );
 }

@@ -7,6 +7,11 @@
   overflow: hidden;
 }
 
+.fade-in-challenge {
+  opacity: 0;
+  animation: fadeIn 0.6s linear 0.3s 1 forwards;
+}
+
 .background-video {
   position: absolute;
   top: 0;
@@ -18,4 +23,13 @@
   width: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+@keyframes fadeIn {
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
 }
