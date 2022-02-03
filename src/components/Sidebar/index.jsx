@@ -41,6 +41,8 @@ const SideDrawer = ({ isFadeOutUseCases }) => {
       toggleFocusElements("bull");
     else if (window.location.href.split("/")[3] === "demo")
       toggleFocusElements("small");
+    else if (window.location.href.split("/")[3] === "schedule-demo")
+      toggleFocusElements("event");
   }, []);
 
   const toggleMenuClasses = () => {
@@ -114,7 +116,7 @@ const SideDrawer = ({ isFadeOutUseCases }) => {
     <div>
       <div className={menuClasses}>
         <div className="sidebar_items_wrapper">
-          <div className="sidebar_item">
+          <div className="sidebar_item" onClick={() => navigate("/")}>
             <p>appgate</p>
             <span onClick={toggleMenuClasses}>
               <img
@@ -190,7 +192,13 @@ const SideDrawer = ({ isFadeOutUseCases }) => {
               />
             </span>
           </div>
-          <div className="sidebar_item">
+          <div
+            className="sidebar_item"
+            onClick={() => {
+              toggleFocusElements("play");
+              navigate("/schedule-demo");
+            }}
+          >
             <p className={`${!toggleEventIcon && "green_text"}`}>
               SCHEDULE DEMO
             </p>

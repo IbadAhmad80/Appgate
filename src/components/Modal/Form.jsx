@@ -10,9 +10,9 @@ toast.configure();
 
 export default function Form({ isCloseModal }) {
   const [values, setFormValues] = useState({
-    firstName: null,
-    lastName: null,
-    email: null,
+    firstName: "",
+    lastName: "",
+    email: "",
   });
 
   const [remoteAccessChecked, isRemoteAccessChecked] = useState(false);
@@ -32,25 +32,32 @@ export default function Form({ isCloseModal }) {
       draggable: true,
     });
 
-    const el = document.getElementsByClassName("form");
-    const form = JSON.stringify(el[0]);
+    var data = `irst-name=test&last-name=user&email=jeremy.williams%40appgate.com`;
 
-    axios
-      .post("https://ww3.appgate.com/l/863411/2022-01-28/5t1z89", { form })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
 
+    xhr.addEventListener("readystatechange", function () {
+      if (this.readyState === 4) {
+        console.log(this);
+      }
+    });
+
+    xhr.open("POST", "https://ww3.appgate.com/l/863411/2022-01-28/5t1z89");
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader("cache-control", "no-cache");
+    xhr.setRequestHeader(
+      "postman-token",
+      "8ccad9b4-68ae-0f57-0ace-f7421f5f88eb"
+    );
+    xhr.send(data);
     isCloseModal();
   };
 
   return (
     <div>
       <form className="form" onSubmit={onSubmit}>
-        <label for="firstname">First Name</label>
+        <label htmlFor="firstname">First Name</label>
 
         <input
           type="text"
@@ -63,7 +70,7 @@ export default function Form({ isCloseModal }) {
           required
         />
 
-        <label for="lastname">Last Name</label>
+        <label htmlFor="lastname">Last Name</label>
         <input
           type="text"
           name="lastname"
@@ -75,7 +82,7 @@ export default function Form({ isCloseModal }) {
           required
         />
 
-        <label for="email">Email</label>
+        <label htmlFor="email">Email</label>
         <input
           type="email"
           name="email"

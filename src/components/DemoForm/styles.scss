@@ -1,0 +1,48 @@
+@import "../../index.scss";
+
+.demo-form-wrapper {
+  height: 600px;
+  width: 45%;
+  margin: 0 auto;
+}
+
+.demo-input,
+.dropdown,
+textarea {
+  width: 550px;
+  margin: 15px auto !important;
+  height: 40px;
+  border-radius: 20px;
+  border: solid 1px #fff !important;
+  background-color: #222 !important;
+  font-family: $gibson-light;
+  color: white;
+  padding: 0 2rem;
+  font-style: italic !important;
+}
+
+.dropdown {
+  width: 615px;
+  border: 1px solid #fff;
+  padding: 0;
+}
+
+.dropdown-control {
+  position: relative;
+  border-radius: 1px;
+  outline: none;
+  padding: 12px 52px 10px 30px;
+  transition: all 200ms ease;
+}
+
+.placeholder-dropdown {
+  font-family: $gibson-semi-bold;
+  color: white !important;
+}
+
+textarea {
+  width: 570px;
+  resize: none;
+  padding: 1rem 1.5rem;
+  color: white !important;
+}

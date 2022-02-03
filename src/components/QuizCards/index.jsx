@@ -7,6 +7,7 @@ import noBS from "../../assets/icons/media/0-bs.png";
 
 export default function QuizCard({ id, statementText }) {
   const getProgerss = () => {
+    console.log("ids are", id);
     if (id === 1) return "0%";
     else if (id === 2) return "25%";
     else if (id === 3) return "50%";
@@ -19,11 +20,14 @@ export default function QuizCard({ id, statementText }) {
         <img src={noBS} alt="no bs img" className="no-bs-image" />
         <img src={bs} alt="bs img" className="bs-image" />
       </div>
-      <div className="container">
+      <div className="overlay-container">
         <div className="progress" style={{ width: getProgerss() }}></div>
       </div>
       <h4>Statement {id} of 4</h4>
-      <h1>{statementText}</h1>
+      <h1>
+        {/* {statementText.slice(0, 90)} {statementText.length > 90 && ".."} */}
+        {statementText}
+      </h1>
     </div>
   );
 }

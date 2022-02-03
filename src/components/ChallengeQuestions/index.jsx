@@ -4,13 +4,25 @@ import tickk from "../../assets/icons/media/tick.png";
 import cross from "../../assets/icons/media/cross.png";
 
 import "./styles.scss";
+
 import QuizCard from "../QuizCards";
-import { questionText } from "./Text";
+import { questions } from "./Text";
 import ChallengeResults from "../ChallengeResults/index";
 
 export default function ChallengeQuestions() {
+  const [challengeQuestion, setChallengeQuestions] = useState([]);
   const [cardsCounter, setCardsCounter] = useState(0);
   const [showResults, isShowResults] = useState(false);
+  const [userAnswers, setUserAnswers] = useState([]);
+
+  useEffect(() => {
+    var randomQuestions = [];
+    while (randomQuestions.length < 4) {
+      var r = Math.floor(Math.random() * 14) + 1;
+      if (randomQuestions.indexOf(r) === -1) randomQuestions.push(questions[r]);
+    }
+    setChallengeQuestions(randomQuestions);
+  }, []);
 
   useEffect(() => {
     if (cardsCounter === 4) {
@@ -25,6 +37,7 @@ export default function ChallengeQuestions() {
     removeScaling(el);
     if (type === "cross") {
       el?.classList.add("hide-wrong-choice");
+      setUserAnswers((prevAnswers) => [...prevAnswers, false]);
       document
         .querySelector(
           `.card-${
@@ -34,7 +47,7 @@ export default function ChallengeQuestions() {
         ?.classList.add("fade-in");
     } else {
       el?.classList.add("hide-correct-choice");
-
+      setUserAnswers((prevAnswers) => [...prevAnswers, true]);
       document
         .querySelector(
           `.card-${
@@ -73,16 +86,22 @@ export default function ChallengeQuestions() {
     el?.classList.remove("scale-to-80");
   };
 
-  if (showResults) return <ChallengeResults />;
+  if (showResults)
+    return (
+      <ChallengeResults
+        challengeQuestion={challengeQuestion}
+        userAnswers={userAnswers}
+      />
+    );
 
   return (
     <>
       <div className="quiz-questions-wrapper">
         <div className="quiz-cards-wrapper">
-          {questionText.map(({ id, text }, index) => {
+          {challengeQuestion?.map(({ id, question }, index) => {
             return (
-              <div className={`card-${id}`} key={index + 1}>
-                <QuizCard id={id} statementText={text} />
+              <div className={`card-${index + 1}`} key={index}>
+                <QuizCard id={index + 1} statementText={question} />
               </div>
             );
           })}
