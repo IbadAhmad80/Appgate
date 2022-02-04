@@ -88,16 +88,15 @@ input[type="checkbox"] {
   color: red;
 }
 
-label {
-  display: none;
+.checkbox-image {
+  margin-top: -0.5px;
+  height: 16px;
+  vertical-align: middle;
+  width: 16px;
+  padding: 0 0.4rem 0 0.2rem;
 }
 
-.content-packs label,
-.susbcription-text label {
-  display: unset;
-}
-
-label span {
+span {
   letter-spacing: 0.01rem;
   font-family: 11px;
   color: #4b4b4b;
@@ -106,10 +105,14 @@ label span {
   vertical-align: middle;
 }
 
-.susbcription-text label {
+.susbcription-text {
+  input,
+  img {
+    margin-top: -15px;
+  }
   margin: 40px 20px;
   span {
-    padding: 2px 0 0 0;
+    padding: 2px 0 0 4px;
     display: inline-block;
   }
 }

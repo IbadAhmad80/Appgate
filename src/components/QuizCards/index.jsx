@@ -7,7 +7,6 @@ import noBS from "../../assets/icons/media/0-bs.png";
 
 export default function QuizCard({ id, statementText }) {
   const getProgerss = () => {
-    console.log("ids are", id);
     if (id === 1) return "0%";
     else if (id === 2) return "25%";
     else if (id === 3) return "50%";

@@ -195,7 +195,7 @@ const SideDrawer = ({ isFadeOutUseCases }) => {
           <div
             className="sidebar_item"
             onClick={() => {
-              toggleFocusElements("play");
+              toggleFocusElements("event");
               navigate("/schedule-demo");
             }}
           >
