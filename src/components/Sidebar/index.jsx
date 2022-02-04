@@ -157,14 +157,7 @@ const SideDrawer = ({ isFadeOutUseCases }) => {
               />
             </span>
           </div>
-          <div
-            className="sidebar_item"
-            onClick={() => {
-              toggleFocusElements("bull");
-              isFadeOutUseCases && isFadeOutUseCases(true);
-              navigate("/challenge");
-            }}
-          >
+          <div className="sidebar_item">
             <p className={`${!toggleBullIcon && "green_text"}`}>
               ZERO BS CHALLENGE
             </p>
@@ -175,13 +168,7 @@ const SideDrawer = ({ isFadeOutUseCases }) => {
               />
             </span>
           </div>
-          <div
-            className="sidebar_item"
-            onClick={() => {
-              toggleFocusElements("small");
-              navigate("/demo");
-            }}
-          >
+          <div className="sidebar_item">
             <p className={`${!toggleSmallIcon && "green_text"}`}>
               SEE DEMO NOW
             </p>
@@ -192,13 +179,7 @@ const SideDrawer = ({ isFadeOutUseCases }) => {
               />
             </span>
           </div>
-          <div
-            className="sidebar_item"
-            onClick={() => {
-              toggleFocusElements("event");
-              navigate("/schedule-demo");
-            }}
-          >
+          <div className="sidebar_item">
             <p className={`${!toggleEventIcon && "green_text"}`}>
               SCHEDULE DEMO
             </p>
