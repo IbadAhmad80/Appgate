@@ -4,7 +4,7 @@ import ReactDom from "react-dom";
 import close from "../../assets/icons/media/close.png";
 
 import "./styles.scss";
-import Form from "./Form";
+import InformationForm from "./Form";
 
 export default function Modal({ isCloseModal, closeModal }) {
   if (closeModal) return <></>;
@@ -17,7 +17,7 @@ export default function Modal({ isCloseModal, closeModal }) {
       </div>
       <h1>Request for Materials</h1>
       <h6>All fields are required unless marked optional</h6>
-      <Form isCloseModal={isCloseModal} />
+      <InformationForm isCloseModal={isCloseModal} />
     </div>
     //     document.getElementById("modal")
   );
