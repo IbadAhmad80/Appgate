@@ -123,7 +123,7 @@ const MoreInformation = ({ useCaseID, isCloseModal }) => {
             rel="noreferrer"
           >
             ESG Webinar Replay – Unleash and Secure the Cloud with Zero Trust
-            Access{" "}
+            Access
           </a>
         </div>
         <div className="bullet-2">

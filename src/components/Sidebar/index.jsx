@@ -68,42 +68,27 @@ const SideDrawer = ({ isFadeOutUseCases }) => {
   const toggleFocusElements = (toggleIcon) => {
     switch (toggleIcon) {
       case "play":
-        setToggleEventIcon(true);
-        setToggleFrameIcon(true);
-        setToggleSmallIcon(true);
+        unFocusMenuElements();
         setTogglePlayIcon(!togglePlayIcon);
-        setToggleBullIcon(true);
         break;
 
       case "event":
+        unFocusMenuElements();
         setToggleEventIcon(!toggleEventIcon);
-        setToggleFrameIcon(true);
-        setToggleSmallIcon(true);
-        setTogglePlayIcon(true);
-        setToggleBullIcon(true);
         break;
 
       case "frame":
-        setToggleEventIcon(true);
+        unFocusMenuElements();
         setToggleFrameIcon(!toggleFrameIcon);
-        setToggleSmallIcon(true);
-        setTogglePlayIcon(true);
-        setToggleBullIcon(true);
         break;
 
       case "small":
-        setToggleEventIcon(true);
-        setToggleFrameIcon(true);
+        unFocusMenuElements();
         setToggleSmallIcon(!toggleSmallIcon);
-        setTogglePlayIcon(true);
-        setToggleBullIcon(true);
         break;
 
       case "bull":
-        setToggleEventIcon(true);
-        setToggleFrameIcon(true);
-        setToggleSmallIcon(true);
-        setTogglePlayIcon(true);
+        unFocusMenuElements();
         setToggleBullIcon(!toggleBullIcon);
         break;
 
@@ -112,11 +97,19 @@ const SideDrawer = ({ isFadeOutUseCases }) => {
     }
   };
 
+  const unFocusMenuElements = () => {
+    setToggleEventIcon(true);
+    setToggleFrameIcon(true);
+    setToggleSmallIcon(true);
+    setTogglePlayIcon(true);
+    setToggleBullIcon(true);
+  };
+
   return (
     <div>
       <div className={menuClasses}>
         <div className="sidebar_items_wrapper">
-          <div className="sidebar_item" onClick={() => navigate("/")}>
+          <div className="sidebar_item">
             <p>appgate</p>
             <span onClick={toggleMenuClasses}>
               <img
