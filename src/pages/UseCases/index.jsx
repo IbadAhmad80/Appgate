@@ -31,7 +31,7 @@ const UseCasesWrapper = () => {
           <div className="use-cases-wrapper">
             <UseCases setUseCaseID={setUseCaseID} useCaseID={useCaseID} />
             {useCaseID === 1 && (
-              <RemoteAccess setUseCaseID={setUseCaseID} useCaseID={useCaseID} />
+              <RemoteAccess setUseCaseID={setUseCaseID} useCaseID={1} />
             )}
             {useCaseID === 2 && (
               <HybridEnterprise
