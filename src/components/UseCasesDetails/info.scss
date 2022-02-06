@@ -19,6 +19,7 @@
   }
 
   p {
+    max-width: 180px;
     transform: translateY(1100px);
     animation: translateLowerHalf 0.35s linear 0.35s 1 forwards;
   }

@@ -18,10 +18,7 @@ const RemoteAccess = ({ setUseCaseID }) => {
         <div className="details-container">
           <img src={vector1} className="border_image" alt="left border img" />
           <div className="details-text-container">
-            <h3 className="case-type">
-              Secure Remote <br />
-              Access
-            </h3>
+            <h3 className="case-type">Secure Remote Access</h3>
             <div className="text-body-container">
               <p className="primary-text-1">
                 Work-from-anywhere (WFA) is here to stay. Appgate customers said
@@ -31,10 +28,7 @@ const RemoteAccess = ({ setUseCaseID }) => {
               </p>
               <p className="primary-text-2">
                 However, as WFA expands, so too does the attack surface.
-                <strong>
-                  {" "}
-                  Human error causes up to 88% of breaches.{" "}
-                </strong>{" "}
+                <strong>Human error causes up to 88% of breaches.</strong>
                 Legacy systems and old remote access solutions, like VPNs, are
                 complicated to administer and don’t adequately verify
                 people—potentially leading to wide-open networks.
@@ -97,9 +91,8 @@ const MoreInformation = ({ isCloseModal }) => {
       <img src={topBorder} alt="top border img" className="top-border" />
       <div className="text-container">
         <h4>Want More Info</h4>
-        <p>
-          We will send more detailed <br /> info about Appgate SDP , <br />
-          including :
+        <p className="info-sub-text">
+          We will send more detailed info about Appgate SDP , including :
         </p>
 
         <div className="bullet-1">
